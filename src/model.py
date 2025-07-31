@@ -84,14 +84,14 @@ class U_Net(nn.Module):
         x = self.maxpool(conv3)
         x = self.dconv_down4(x)
 
-        # Bottleneck processing (includes MaxPool2d)
+        # Bottleneck processing 
         x = self.bottleneck_pool(x)  # Reduces to 16x16
         batch, C, H, W = x.shape     # Should be [B, 512, 16, 16]
         x_flat = x.flatten(2).permute(0, 2, 1)  # [B, 256, 512]
         x_transformed = self.transformer_encoder(x_flat)  # Still [B, 256, 512]
         x_transformed = x_transformed.permute(0, 2, 1).view(batch, C, H, W)  # Reshape to [B, 512, 16, 16]
 
-        # Segmentation Decoder (using transformed features)
+        # Segmentation Decoder 
         x = self.upsample3(x_transformed)  # Now 256 channels, 64x64
         x = torch.cat([x, conv3], dim=1)    # Concatenate with conv3 (256 channels, 64x64)
         x = self.dconv_up3(x)

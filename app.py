@@ -10,13 +10,8 @@ def overlay_contour(image: np.ndarray,
                     level: float    = 0.5,
                     color: str      = "red",
                     linewidth: float= 2.0) -> plt.Figure:
-    """
-    Draws a contour at the specified level on top of `image`.
-    Returns the matplotlib Figure.
-    """
-    # copy so we don’t mutate the original
     base = image.copy()
-    # choose colormap if grayscale
+
     cmap = "gray" if base.ndim == 2 else None
 
     fig, ax = plt.subplots()

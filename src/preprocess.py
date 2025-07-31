@@ -20,5 +20,5 @@ def preprocess(input):
                              std=[0.229, 0.224, 0.225])
     ])
 
-    tensor_img = transform(image).unsqueeze(0)  # Add batch dimension
+    tensor_img = transform(image).unsqueeze(0)  
     return tensor_img
