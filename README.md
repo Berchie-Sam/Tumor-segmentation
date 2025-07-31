@@ -50,5 +50,5 @@ Classifier threshold (default 0.5)
 
 These can be tweaked in src/predict.py.
 
-##📝 License
+## 📝 License
 This project is licensed under the MIT License.
