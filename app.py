@@ -1,3 +1,4 @@
+import os
 import gradio as gr
 import numpy as np
 import matplotlib.pyplot as plt
@@ -52,7 +53,8 @@ def main():
         title="Brain Tumor Segmentation",
         description="Upload a brain MRI image to get the predicted tumor mask and presence/absence label."
     )
-    iface.launch()
+    port = int(os.environ.get("PORT", 7860))
+    iface.launch(server_name="0.0.0.0", server_port=port, share=False)
 
 if __name__ == "__main__":
     main()
