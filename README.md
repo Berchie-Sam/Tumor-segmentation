@@ -7,9 +7,9 @@ This repository contains a Gradio-based web interface for brain tumor segmentati
 Tumor-segmentation/
 ├── app.py # Gradio app entrypoint
 ├── src/
-│ ├── model.py # U-Net + Transformer architecture
+│ ├── model.py # Architecture definition
 │ ├── preprocess.py # Image loading & transforms
-│ └── predict.py # ONNX / PyTorch inference logic
+│ └── predict.py # Inference logic
 ├── checkpoints/ # Serialized models (.pth, .onnx)
 ├── .gitignore
 └── README.md
