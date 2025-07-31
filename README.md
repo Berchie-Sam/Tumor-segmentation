@@ -3,6 +3,7 @@
 This repository contains a Gradio-based web interface for brain tumor segmentation and classification using a U-Net + Transformer model.
 
 ## 📂 Project Structure
+```
 Tumor-segmentation/
 ├── app.py # Gradio app entrypoint
 ├── src/
@@ -12,6 +13,7 @@ Tumor-segmentation/
 ├── checkpoints/ # Serialized models (.pth, .onnx)
 ├── .gitignore
 └── README.md
+```
 
 ## 🚀 Quick Start
 1. **Clone & activate env**  
